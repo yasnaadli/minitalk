@@ -12,24 +12,23 @@ OBJ_SERVER = $(SRC_SERVER:.c=.o)
 OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
 
 all: $(SERVER) $(CLIENT)
+
 $(SERVER): $(OBJ_SERVER)
-	@$(CC) $(CFLAGS) $(OBJ_SERVER) -o $(SERVER)
+	$(CC) $(CFLAGS) $(OBJ_SERVER) -o $(SERVER)
 
 $(CLIENT): $(OBJ_CLIENT)
-	@$(CC) $(CFLAGS) $(OBJ_CLIENT) -o $(CLIENT)
+	$(CC) $(CFLAGS) $(OBJ_CLIENT) -o $(CLIENT)
 
-	%.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	@$(RM) $(OBJ_SERVER) $(OBJ_CLIENT)
+	$(RM) $(OBJ_SERVER) $(OBJ_CLIENT)
 
 fclean: clean
-	@$(RM) $(SERVER) $(CLIENT)
+	$(RM) $(SERVER) $(CLIENT)
 	@echo "void got silent."
+
 re: fclean all
-.PHONY: all clean fclean re .c
 
-
-
-
-
+.PHONY: all clean fclean re
