@@ -5,8 +5,8 @@ RM = rm -f
 SERVER = server 
 CLIENT = client 
 
-SRC_SERVER = server.c utils.c
-SRC_CLIENT = client.c utils.c
+SRC_SERVER = server.c ultis.c
+SRC_CLIENT = client.c ultis.c
 
 OBJ_SERVER = $(SRC_SERVER:.c=.o)
 OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
